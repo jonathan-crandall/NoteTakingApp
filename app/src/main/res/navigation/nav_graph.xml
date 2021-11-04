@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/applicationFragment"
+        android:name="com.crandallj.notetaking.ApplicationFragment"
+        android:label="fragment_application"
+        tools:layout="@layout/fragment_application">
+        <action
+            android:id="@+id/action_applicationFragment_to_createNoteFragment"
+            app:destination="@id/createNoteFragment" />
+        <action
+            android:id="@+id/action_applicationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNoteFragment"
+        android:name="com.crandallj.notetaking.CreateNoteFragment"
+        android:label="fragment_create_note"
+        tools:layout="@layout/fragment_create_note" />
+    <action
+        android:id="@+id/action_applicationFragment_to_createNoteFragment"
+        app:destination="@id/createNoteFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.crandallj.notetaking.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_applicationFragment"
+            app:destination="@id/applicationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.crandallj.notetaking.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_applicationFragment"
+            app:destination="@id/applicationFragment" />
+    </fragment>
+</navigation>
